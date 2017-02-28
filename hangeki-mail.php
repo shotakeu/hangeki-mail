@@ -1,0 +1,19 @@
+<?php
+$address = array();
+$address = array('prprjsjj1737@gmail.com',
+	'suisui-susumu-haruna@dcfv.ji8c6yx-m2.net'
+)
+$title ="We detect your mail is spam.";
+$message = "WE DETECT YOUR MAIL IS SPAM.WE CAN ARREST YOU.IF YOU DO NOT WANNA BE ARRESTED, YOU SHOULD CONTACT ME THE WAY YOU KNOW MY EMAIL ADDRESS, IF YOU KNOQ. BUT WE DETECTED YOUR CRIME ALREDEY.PLEASE THINK IT IN CALM. I DON'T WANNA ATTACK YOU. ITHINK YOU'R ASIAN. I BELEAVE THE ASIAN IS NOT FOOL LIKE YOU. YOU'RE NOW MAKING INFAMOUSE, OF ASIAN. AND YOU... ーーー・　・・ー　・ー　・・ー　・・ーー　・ーー　ー・・・ー　ー・　ー・・　・・ー　・ー・・　・・　・ー　・ー　・・ー・・　・ー・・・　ー・・ー・　・・ー　・ー・ー・ー　ー・・　・ー・ー・　ー・ー・・　ー・　・・　ーー・ー・　ー・　・・・　ーー・ー・　・・　・・ー　ーー・ー・　ー・ー　ーーー　ー・ーー・　ーー　 ";
+mb_language("Japanese");
+mb_internal_encoding("UTF-8");
+
+echo "======start=======".time()."\n";
+foreach($address as $val) {
+    if (mb_send_mail($val, $title, $message, "From: sho20tcu@gmail.com")) {
+        echo "メールが送信されました。\n";
+    } else {
+        echo "メールの送信に失敗しました。\n";
+    }
+}
+echo "======end=======\n";
