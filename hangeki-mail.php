@@ -1,8 +1,18 @@
 <?php
-$address = array();
+/**
+* USAGE
+* $ php hangeki-mail.php
+* after you edited this script.
+*/
 
-/** add spammer mail address in this array */
-$address = array('****@***.***','****@***.***');
+/** init */
+/** spammer_address array */
+$spammer_address = array();
+/** type your e-mail address here. */
+$your_mail_address = "";
+
+/** add spammer mail address in this array. */
+$spammer_address = array('****@***.***','****@***.***');
 
 /** title of mail */
 $title ="We detect your mail is spam.";
@@ -14,11 +24,10 @@ $message = "WE DETECT YOUR MAIL IS SPAM.WE CAN ARREST YOU.IF YOU DO NOT WANNA BE
 mb_language("Japanese");
 mb_internal_encoding("UTF-8");
 
-
 /** message for logging  */
 echo "======start=======".time()."\n";
-foreach($address as $val) {
-    if (mb_send_mail($val, $title, $message, "From: sho20tcu@gmail.com")) {
+foreach($spammer_address as $val) {
+    if (mb_send_mail($val, $title, $message, "From: $your_mail_address")) {
         echo "メールが送信されました。\n";
     } else {
         echo "メールの送信に失敗しました。\n";
